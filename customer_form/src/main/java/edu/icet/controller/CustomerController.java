@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/customer/api")
 public class CustomerController {
     List<Customer>customerList=new ArrayList<>();

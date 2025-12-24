@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900 text-gray-100 overflow-x-hidden">
+    <div id="animatedBackground" class="fixed inset-0 -z-10 opacity-30">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto mb-12 text-center">
+        <h1
+          class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+        >
+          Customer Management System
+        </h1>
+        <p class="text-gray-300 text-lg">
+          Manage your customer information efficiently
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-1">
+          <div
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-blue-500 transition-colors duration-300"
+          >
+            <h2 class="text-2xl font-bold mb-6 text-white">Add Customer</h2>
+
+            <div class="space-y-4">
+              <input
+                type="text"
+                placeholder="id"
+                id="txtCustomerId"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-white placeholder-gray-400 transition-all duration-300"
+              />
+              <input
+                type="text"
+                placeholder="name"
+                id="txtCustomerName"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-white placeholder-gray-400 transition-all duration-300"
+              />
+              <input
+                type="text"
+                placeholder="address"
+                id="txtCustomerAddress"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-white placeholder-gray-400 transition-all duration-300"
+              />
+              <input
+                type="text"
+                placeholder="phone number"
+                id="txtCustomerNumber"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-white placeholder-gray-400 transition-all duration-300"
+              />
+              <input
+                type="text"
+                placeholder="salary"
+                id="txtCustomerSalary"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-white placeholder-gray-400 transition-all duration-300"
+              />
+            </div>
+
+            <div class="mt-8 space-y-3">
+              <button
+                onclick="saveCustomer()"
+                class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
+              >
+                Save Customer
+              </button>
+              <button
+                onclick="getDetails()"
+                class="w-full py-3 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 active:scale-95"
+              >
+                Reload
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-700"
+          >
+            <h2 class="text-2xl font-bold mb-6 text-white">Customer Details</h2>
+
+            <div class="overflow-x-auto">
+              <table id="tblCustomerDetails" class="w-full">
+                <thead>
+                  <tr class="border-b-2 border-gray-700">
+                    <td class="px-4 py-3 text-left text-blue-400 font-semibold">
+                      ID
+                    </td>
+                    <td class="px-4 py-3 text-left text-blue-400 font-semibold">
+                      Name
+                    </td>
+                    <td class="px-4 py-3 text-left text-blue-400 font-semibold">
+                      Address
+                    </td>
+                    <td class="px-4 py-3 text-left text-blue-400 font-semibold">
+                      Number
+                    </td>
+                    <td class="px-4 py-3 text-left text-blue-400 font-semibold">
+                      Salary
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
